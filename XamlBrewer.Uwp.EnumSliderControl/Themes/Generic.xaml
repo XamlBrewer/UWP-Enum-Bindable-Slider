@@ -1,0 +1,25 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="using:XamlBrewer.Uwp.Controls">
+
+    <Style TargetType="local:EnumSlider">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:EnumSlider">
+                    <!--<StackPanel>-->
+                        <!-- TemplateBinding is evaluated at compile-time. -->
+                        <!--<TextBlock Text="{TemplateBinding Value}" />-->
+                        <!-- Binding RelativeSource TemplatedParent gets runtime value. -->
+                        <!--<TextBlock Text="{Binding  RelativeSource={RelativeSource TemplatedParent}, Path=Value}"
+                                   HorizontalAlignment="Right"
+                                   TextAlignment="Right" />-->
+                        <Slider Name="PART_Slider"
+                                SnapsTo="StepValues"
+                                StepFrequency="1"
+                                 />
+                    <!--</StackPanel>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

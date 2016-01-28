@@ -1,0 +1,66 @@
+﻿<Page x:Class="XamlBrewer.Uwp.EnumSliderSample.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:XamlBrewer.Uwp.EnumSliderSample"
+      xmlns:controls="using:XamlBrewer.Uwp.Controls"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d"
+      FontSize="20"
+      Foreground="{StaticResource TitlebarBackgroundBrush}">
+
+    <Page.Resources>
+        <!-- Converter to support {x:Bind} -->
+        <controls:EnumConverter x:Key="EnumConverter" />
+    </Page.Resources>
+
+    <Grid Background="{StaticResource PageBackgroundBrush}">
+        <Image Source="ms-appx:///Assets/sunflowers.jpg"
+               Stretch="UniformToFill"
+               VerticalAlignment="Bottom" />
+        <StackPanel Margin="0 80 0 0">
+            <Grid>
+                <TextBlock Text="{x:Bind ViewModel.Importance, Mode=OneWay}"
+                           Margin="20 0"
+                           HorizontalAlignment="Right"
+                           TextAlignment="Right"
+                           FontWeight="SemiBold" />
+                <TextBlock Text="Bound in XAML with {x:Bind}"
+                           Margin="20 0"
+                           HorizontalAlignment="Left"
+                           Foreground="{StaticResource TitlebarBackgroundBrush}" />
+            </Grid>
+
+            <!-- x:Bind Declarative Binding (a converter is mandatory at design time) -->
+            <controls:EnumSlider Value="{x:Bind ViewModel.Importance, Mode=TwoWay, Converter={StaticResource EnumConverter}}"
+                                 Margin="20 10 20 20" />
+
+            <!-- Old School Declarative Binding (converter not required) -->
+            <TextBlock Text="Bound in XAML with {Binding}"
+                       Margin="20 0"
+                       HorizontalAlignment="Left"
+                       Foreground="{StaticResource TitlebarBackgroundBrush}" />
+            <controls:EnumSlider DataContext="{x:Bind ViewModel}"
+                                 Value="{Binding Importance, Mode=TwoWay}"
+                                 Margin="20 10 20 20" />
+
+            <!-- Programmatic Binding -->
+            <TextBlock Text="Bound in C#"
+                       Margin="20 0"
+                       HorizontalAlignment="Left"
+                       Foreground="{StaticResource TitlebarBackgroundBrush}" />
+            <controls:EnumSlider x:Name="SecondSlider"
+                                 Margin="20 10 20 20" />
+
+            <!-- Change bound property value. -->
+            <Button Content="Set to Critical"
+                    Command="{x:Bind ViewModel.UpdateCommand}"
+                    HorizontalAlignment="Right"
+                    Margin="20 10"
+                    FontSize="20"
+                    Background="{StaticResource SplitViewHighlightBrush}"
+                    Foreground="{StaticResource LightGreenLeftover}"
+                    BorderBrush="{StaticResource SplitViewBackgroundBrush}" />
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,28 @@
+﻿<Application
+    x:Class="XamlBrewer.Uwp.EnumSliderSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamlBrewer.Uwp.EnumSliderSample"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <!-- Theme Resources -->
+        <!-- Header -->
+        <SolidColorBrush x:Key="TitlebarBackgroundBrush"
+                         Color="#FF8D3700" />
+        <SolidColorBrush x:Key="StatusbarBackgroundBrush"
+                         Color="#FF8D3700" />
+        <!-- Splitview Pane -->
+        <SolidColorBrush x:Key="SplitViewBackgroundBrush"
+                         Color="#FFF29C04" />
+        <SolidColorBrush x:Key="SplitViewForegroundBrush"
+                         Color="White" />
+        <SolidColorBrush x:Key="SplitViewHighlightBrush"
+                         Color="#FF903700" />
+        <!-- Splitview Content -->
+        <SolidColorBrush x:Key="PageBackgroundBrush"
+                         Color="#FFFFF7AA" />
+
+        <SolidColorBrush x:Key="LightGreenLeftover"
+                         Color="#FFD9F34A" />
+    </Application.Resources>
+</Application>
