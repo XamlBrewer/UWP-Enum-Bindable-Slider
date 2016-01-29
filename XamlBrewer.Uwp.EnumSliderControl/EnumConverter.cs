@@ -3,6 +3,9 @@ using Windows.UI.Xaml.Data;
 
 namespace XamlBrewer.Uwp.Controls
 {
+    /// <summary>
+    /// Facilitates two-way binding to an Enum.
+    /// </summary>
     public class EnumConverter : IValueConverter
     {
         private Type _enum;

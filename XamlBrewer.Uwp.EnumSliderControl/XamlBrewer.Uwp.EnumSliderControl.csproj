@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DoubleToEnumConverter.cs" />
+    <Compile Include="EnumDisplayConverter.cs" />
     <Compile Include="EnumConverter.cs" />
     <Compile Include="EnumSlider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

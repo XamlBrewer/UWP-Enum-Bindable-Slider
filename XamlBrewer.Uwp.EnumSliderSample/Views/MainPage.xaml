@@ -12,6 +12,7 @@
     <Page.Resources>
         <!-- Converter to support {x:Bind} -->
         <controls:EnumConverter x:Key="EnumConverter" />
+        <controls:EnumDisplayConverter x:Key="DoubleToEnumConverter" />
     </Page.Resources>
 
     <Grid Background="{StaticResource PageBackgroundBrush}">
@@ -20,7 +21,7 @@
                VerticalAlignment="Bottom" />
         <StackPanel Margin="0 80 0 0">
             <Grid>
-                <TextBlock Text="{x:Bind ViewModel.Importance, Mode=OneWay}"
+                <TextBlock Text="{x:Bind ViewModel.Importance, Mode=OneWay, Converter={StaticResource DoubleToEnumConverter}}"
                            Margin="20 0"
                            HorizontalAlignment="Right"
                            TextAlignment="Right"
