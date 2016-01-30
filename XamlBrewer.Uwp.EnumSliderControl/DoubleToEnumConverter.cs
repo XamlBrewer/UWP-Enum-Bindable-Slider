@@ -7,9 +7,10 @@ using Windows.UI.Xaml.Data;
 namespace XamlBrewer.Uwp.Controls
 {
     /// <summary>
-    /// Internal use only.
+    /// Converts the value of the internal slider into text.
     /// </summary>
-    class DoubleToEnumConverter : IValueConverter
+    /// <remarks>Internal use only.</remarks>
+    internal class DoubleToEnumConverter : IValueConverter
     {
         private Type _enum;
 

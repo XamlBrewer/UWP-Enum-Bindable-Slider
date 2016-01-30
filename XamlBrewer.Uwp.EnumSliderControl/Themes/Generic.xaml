@@ -6,18 +6,9 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="local:EnumSlider">
-                    <!--<StackPanel>-->
-                        <!-- TemplateBinding is evaluated at compile-time. -->
-                        <!--<TextBlock Text="{TemplateBinding Value}" />-->
-                        <!-- Binding RelativeSource TemplatedParent gets runtime value. -->
-                        <!--<TextBlock Text="{Binding  RelativeSource={RelativeSource TemplatedParent}, Path=Value}"
-                                   HorizontalAlignment="Right"
-                                   TextAlignment="Right" />-->
-                        <Slider Name="PART_Slider"
-                                SnapsTo="StepValues"
-                                StepFrequency="1"
-                                 />
-                    <!--</StackPanel>-->
+                    <Slider Name="PART_Slider"
+                            SnapsTo="StepValues"
+                            StepFrequency="1" />
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

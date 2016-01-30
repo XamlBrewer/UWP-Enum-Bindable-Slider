@@ -55,7 +55,7 @@ namespace XamlBrewer.Uwp.Controls
                 b.Source = viewModel;
                 b.Path = new PropertyPath(path);
                 b.Mode = BindingMode.TwoWay;
-                b.Converter = new EnumConverter();
+                // b.Converter = new EnumConverter();
                 this.SetBinding(EnumSlider.ValueProperty, b);
             }
             catch (Exception)
@@ -73,12 +73,11 @@ namespace XamlBrewer.Uwp.Controls
         {
             if (_enum == null)
             {
+                // Keep the XAML Designer happy.
                 return;
             }
 
             InitializeSlider();
-
-            base.OnApplyTemplate();
         }
 
         /// <summary>
@@ -92,7 +91,7 @@ namespace XamlBrewer.Uwp.Controls
                 slider.ValueChanged += Slider_ValueChanged;
                 slider.Maximum = Enum.GetNames(this._enum).Count() - 1;
                 slider.ThumbToolTipValueConverter = new DoubleToEnumConverter(_enum);
-                slider.Value = (double)(int)this.Value;
+                slider.Value = (int)this.Value;
             }
         }
 
@@ -125,6 +124,7 @@ namespace XamlBrewer.Uwp.Controls
                     {
                         _this._enum = e.NewValue.GetType();
                         _this.InitializeSlider();
+                        return; // Slider got its value.
                     }
                 }
 
@@ -132,7 +132,7 @@ namespace XamlBrewer.Uwp.Controls
 
                 if (slider != null)
                 {
-                    slider.Value = (double)(int)_this.Value;
+                    slider.Value = (int)_this.Value;
                 }
             }
         }

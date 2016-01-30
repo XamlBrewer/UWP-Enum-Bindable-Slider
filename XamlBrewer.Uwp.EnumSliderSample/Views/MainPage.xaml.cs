@@ -32,7 +32,7 @@ namespace XamlBrewer.Uwp.EnumSliderSample
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            this.SecondSlider.BindTo(ViewModel, "Importance");
+            this.CodeBehindSlider.BindTo(ViewModel, "Importance");
         }
     }
 }

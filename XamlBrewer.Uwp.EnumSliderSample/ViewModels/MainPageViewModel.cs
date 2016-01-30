@@ -12,7 +12,7 @@ namespace XamlBrewer.Uwp.EnumSliderSample.ViewModels
 {
     class MainPageViewModel : ViewModelBase
     {
-        private Importance importance; //  = Importance.Critical; // Does work.
+        private Importance importance; // = Importance.Critical; // Does work.
 
         public MainPageViewModel()
         {
